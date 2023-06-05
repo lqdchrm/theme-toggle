@@ -1,0 +1,28 @@
+{
+  "name": "theme-toggle",
+  "private": true,
+  "version": "0.0.0",
+  "description": "A simple dark/light-mode toggle sitting in your tray.",
+  "main": "src/main.js",
+  "scripts": {
+    "dev": "npx electron .",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "author": "lqdchrm <lqdchrm-code@yahoo.de>",
+  "license": "MIT",
+  "devDependencies": {
+    "@electron-forge/cli": "^6.1.1",
+    "@electron-forge/maker-deb": "^6.1.1",
+    "@electron-forge/maker-rpm": "^6.1.1",
+    "@electron-forge/maker-squirrel": "^6.1.1",
+    "@electron-forge/maker-zip": "^6.1.1",
+    "electron": "^25.0.1",
+    "electron-reloader": "^1.2.3"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "windows": "^0.1.2"
+  }
+}
