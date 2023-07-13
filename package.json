@@ -5,24 +5,14 @@
   "description": "A simple dark/light-mode toggle sitting in your tray.",
   "main": "src/main.js",
   "scripts": {
-    "dev": "electron .",
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make"
+    "start": "electron ."
   },
   "author": "lqdchrm <lqdchrm-code@yahoo.de>",
   "license": "MIT",
   "devDependencies": {
-    "@electron-forge/cli": "^6.2.1",
-    "@electron-forge/maker-deb": "^6.2.1",
-    "@electron-forge/maker-rpm": "^6.2.1",
-    "@electron-forge/maker-squirrel": "^6.2.1",
-    "@electron-forge/maker-zip": "^6.2.1",
-    "electron": "^25.3.0",
-    "electron-reloader": "^1.2.3"
+    "electron": "^25.3.0"
   },
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.0",
     "windows": "^0.1.2"
   }
 }
