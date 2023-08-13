@@ -35,7 +35,7 @@ async function getDeviceId(name, clazz) {
     objs = objs.filter(obj => Object.keys(obj).length);
     
     // find by name
-    let match = objs.filter(obj => obj["Gerätebeschreibung"] == name);
+    let match = objs.filter(obj => obj["Gerätebeschreibung"] == name && obj["Status"] == "Gestartet");
     
     // get id
     if (!match.length) {
@@ -58,12 +58,16 @@ async function enableDevice(name = "NVIDIA GeForce RTX 3070 Ti", clazz = "Displa
 }
 
 async function disableDevice(name = "NVIDIA GeForce RTX 3070 Ti", clazz = "Display") {
-    let id = await getDeviceId(name, clazz);
-    let result = await run(`pnputil /disable-device "${id}"`);
-    if (result.stdout)
-        console.log(result.stdout);
-    if (result.stderr)
-        console.error(result.stderr);
+    try {
+        let id = await getDeviceId(name, clazz);
+        let result = await run(`pnputil /disable-device "${id}"`);
+        if (result.stdout)
+            console.log(result.stdout);
+        if (result.stderr)
+            console.error(result.stderr);
+    } catch (err) {
+        console.error(err);
+    }
 }
 
 module.exports = {
