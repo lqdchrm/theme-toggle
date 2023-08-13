@@ -35,7 +35,7 @@ async function getDeviceId(name, clazz) {
     objs = objs.filter(obj => Object.keys(obj).length);
     
     // find by name
-    let match = objs.filter(obj => obj["Gerätebeschreibung"] == name && obj["Status"] == "Gestartet");
+    let match = objs.filter(obj => obj["Gerätebeschreibung"] == name && ["Gestarted", "Deaktiviert"].includes(obj["Status"]));
     
     // get id
     if (!match.length) {
